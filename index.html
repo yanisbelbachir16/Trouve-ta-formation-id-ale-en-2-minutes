@@ -23,118 +23,122 @@
   --purple-light:#EDE9FE;
   --orange:#F59E0B;
   --orange-light:#FEF3C7;
+  --red:#EF4444;
+  --red-light:#FEE2E2;
+  --teal:#0D9488;
+  --teal-light:#CCFBF1;
 }
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
 
-/* HEADER */
-header{background:var(--white);border-bottom:0.5px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;}
+header{background:var(--white);border-bottom:0.5px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
 .logo{display:flex;align-items:center;gap:10px;}
-.logo-icon{width:36px;height:36px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:16px;font-weight:800;}
+.logo-icon{width:36px;height:36px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:18px;font-weight:800;}
 .logo-name{font-size:16px;font-weight:700;letter-spacing:-0.5px;}
 .logo-name span{color:var(--blue);}
-.header-badge{font-size:11px;background:var(--blue-light);color:var(--blue);padding:5px 12px;border-radius:20px;font-weight:600;}
+.header-badge{font-size:11px;background:var(--green-light);color:var(--green);padding:5px 12px;border-radius:20px;font-weight:600;border:0.5px solid #6EE7B7;}
 
-/* HERO */
 .hero{text-align:center;padding:3rem 1.5rem 2rem;}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.5px;}
 .hero h1{font-size:36px;font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:0.8rem;}
 .hero h1 span{color:var(--blue);}
-.hero p{font-size:14px;color:var(--gray);line-height:1.7;max-width:480px;margin:0 auto;}
+.hero p{font-size:14px;color:var(--gray);line-height:1.7;max-width:480px;margin:0 auto 1.5rem;}
+.hero-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+.hstat{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:5px;}
+.hstat strong{color:var(--dark);font-weight:700;}
 
-/* PROGRESS */
-.progress-wrap{max-width:600px;margin:1.5rem auto 0;padding:0 1.5rem;}
-.progress-steps{display:flex;align-items:center;gap:0;margin-bottom:0.5rem;}
-.pstep{flex:1;height:4px;border-radius:2px;background:var(--border);transition:background 0.4s;}
-.pstep.done{background:var(--blue);}
-.pstep.active{background:var(--blue-mid);}
-.pstep+.pstep{margin-left:4px;}
-.progress-label{font-size:11px;color:var(--gray);text-align:center;}
+.progress-wrap{max-width:600px;margin:0 auto 0;padding:0 1.5rem;}
+.progress-steps{display:flex;align-items:center;gap:4px;margin-bottom:0.5rem;}
+.pstep{flex:1;height:5px;border-radius:3px;background:var(--border);transition:background 0.4s;}
+.pstep.done{background:var(--green);}
+.pstep.active{background:var(--blue);}
+.progress-label{font-size:11px;color:var(--gray);text-align:center;font-weight:500;}
 
-/* FORM CONTAINER */
 .form-wrap{max-width:600px;margin:0 auto;padding:1.5rem;}
 
-/* STEP CARD */
 .step-card{background:var(--white);border-radius:20px;padding:2rem;border:0.5px solid var(--border);display:none;animation:fadeIn 0.3s ease;}
 .step-card.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
 .step-eyebrow{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem;}
-.step-title{font-size:20px;font-weight:700;letter-spacing:-0.5px;margin-bottom:0.3rem;}
-.step-sub{font-size:13px;color:var(--gray);margin-bottom:1.5rem;line-height:1.5;}
+.step-title{font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:0.4rem;}
+.step-sub{font-size:13px;color:var(--gray);margin-bottom:1.5rem;line-height:1.6;}
 
-/* OPTIONS GRID */
 .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .options-grid.cols3{grid-template-columns:1fr 1fr 1fr;}
-.opt{border:1.5px solid var(--border);border-radius:14px;padding:1rem;cursor:pointer;transition:all 0.2s;text-align:left;background:var(--white);font-family:'Plus Jakarta Sans',sans-serif;}
+.opt{border:1.5px solid var(--border);border-radius:14px;padding:1rem;cursor:pointer;transition:all 0.2s;text-align:left;background:var(--white);font-family:'Plus Jakarta Sans',sans-serif;width:100%;}
 .opt:hover{border-color:var(--blue-mid);background:var(--blue-light);}
-.opt.selected{border-color:var(--blue);background:var(--blue-light);}
+.opt.selected{border-color:var(--blue);background:var(--blue-light);box-shadow:0 0 0 3px rgba(59,91,219,0.1);}
 .opt-icon{font-size:24px;margin-bottom:0.5rem;display:block;}
-.opt-title{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:2px;}
+.opt-title{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px;}
 .opt-desc{font-size:11px;color:var(--gray);line-height:1.4;}
 .opt.selected .opt-title{color:var(--blue);}
 
-/* CHECKBOX OPTIONS */
 .check-grid{display:flex;flex-direction:column;gap:8px;}
-.check-opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--border);border-radius:12px;padding:0.8rem 1rem;cursor:pointer;transition:all 0.2s;background:var(--white);}
-.check-opt:hover{border-color:var(--blue-mid);}
+.check-opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--border);border-radius:12px;padding:0.8rem 1rem;cursor:pointer;transition:all 0.2s;background:var(--white);font-family:'Plus Jakarta Sans',sans-serif;width:100%;text-align:left;}
+.check-opt:hover{border-color:var(--blue-mid);background:var(--blue-light);}
 .check-opt.selected{border-color:var(--blue);background:var(--blue-light);}
-.check-box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
-.check-opt.selected .check-box{background:var(--blue);border-color:var(--blue);color:var(--white);font-size:12px;}
+.check-box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;font-size:12px;}
+.check-opt.selected .check-box{background:var(--blue);border-color:var(--blue);color:var(--white);}
 .check-label{font-size:13px;font-weight:500;}
 
-/* INPUT */
 .input-field{width:100%;border:1.5px solid var(--border);border-radius:12px;padding:0.8rem 1rem;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;color:var(--dark);outline:none;transition:border-color 0.2s;background:var(--white);}
-.input-field:focus{border-color:var(--blue);}
-.input-label{font-size:12px;font-weight:600;color:var(--dark);margin-bottom:0.4rem;display:block;}
+.input-field:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,91,219,0.08);}
+.input-label{font-size:12px;font-weight:700;color:var(--dark);margin-bottom:0.4rem;display:block;margin-top:1rem;}
 
-/* BOUTONS NAV */
 .nav-btns{display:flex;gap:10px;margin-top:1.5rem;}
-.btn-next{flex:1;background:var(--blue);color:var(--white);border:none;padding:12px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background 0.2s;}
-.btn-next:hover{background:#2F4AC0;}
-.btn-next:disabled{background:var(--border);color:var(--gray);cursor:not-allowed;}
-.btn-prev{background:var(--white);color:var(--dark);border:1.5px solid var(--border);padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.2s;}
+.btn-next{flex:1;background:var(--blue);color:var(--white);border:none;padding:13px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.2s;}
+.btn-next:hover{background:#2F4AC0;transform:translateY(-1px);}
+.btn-next:disabled{background:var(--border);color:var(--gray);cursor:not-allowed;transform:none;}
+.btn-prev{background:var(--white);color:var(--dark);border:1.5px solid var(--border);padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.2s;}
 .btn-prev:hover{border-color:var(--blue);color:var(--blue);}
 
 /* RESULTS */
 .results-wrap{max-width:600px;margin:0 auto;padding:1.5rem;display:none;}
-.results-header{background:var(--white);border-radius:20px;padding:1.5rem 2rem;border:0.5px solid var(--border);margin-bottom:1.2rem;text-align:center;}
-.results-emoji{font-size:40px;margin-bottom:0.8rem;}
-.results-title{font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:0.4rem;}
-.results-sub{font-size:13px;color:var(--gray);}
+.results-header{background:linear-gradient(135deg,#3B5BDB,#7C3AED);border-radius:20px;padding:2rem;margin-bottom:1.2rem;color:white;text-align:center;}
+.results-name{font-size:13px;font-weight:600;opacity:0.8;margin-bottom:0.3rem;}
+.results-title{font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:0.6rem;}
+.results-sub{font-size:13px;opacity:0.85;line-height:1.6;}
+.results-pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:1rem;}
+.results-pill{background:rgba(255,255,255,0.15);border:0.5px solid rgba(255,255,255,0.25);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;}
 
-.result-card{background:var(--white);border-radius:16px;padding:1.5rem;border:0.5px solid var(--border);margin-bottom:12px;animation:fadeIn 0.4s ease;}
-.result-card-header{display:flex;align-items:start;gap:12px;margin-bottom:1rem;}
-.result-rank{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;}
+.result-card{background:var(--white);border-radius:16px;padding:1.5rem;border:0.5px solid var(--border);margin-bottom:12px;animation:fadeIn 0.4s ease;transition:box-shadow 0.2s;}
+.result-card:hover{box-shadow:0 4px 20px rgba(59,91,219,0.1);}
+.result-card-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem;}
+.result-rank{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;}
 .rank-1{background:var(--orange-light);color:var(--orange);}
 .rank-2{background:var(--blue-light);color:var(--blue);}
 .rank-3{background:var(--green-light);color:var(--green);}
-.rank-other{background:#F3F4F6;color:var(--gray);}
-.result-name{font-size:16px;font-weight:700;letter-spacing:-0.3px;margin-bottom:3px;}
-.result-type{font-size:11px;font-weight:600;padding:3px 9px;border-radius:8px;display:inline-block;margin-bottom:0.4rem;}
+.rank-other{background:var(--purple-light);color:var(--purple);}
+.result-name{font-size:16px;font-weight:800;letter-spacing:-0.3px;margin-bottom:4px;}
+.result-type{font-size:11px;font-weight:700;padding:3px 10px;border-radius:8px;display:inline-block;}
 .type-licence{background:var(--blue-light);color:var(--blue);}
 .type-master{background:var(--purple-light);color:var(--purple);}
-.type-BUT{background:var(--green-light);color:var(--green);}
+.type-but{background:var(--teal-light);color:var(--teal);}
+.type-bts{background:var(--green-light);color:var(--green);}
 .type-bachelor{background:var(--orange-light);color:var(--orange);}
-.result-desc{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:1rem;}
+.type-autre{background:#F3F4F6;color:var(--gray);}
+
+.result-desc{font-size:12px;color:var(--gray);line-height:1.7;margin-bottom:0.8rem;}
+.result-why{font-size:12px;color:var(--blue);font-weight:600;background:var(--blue-light);padding:8px 12px;border-radius:10px;margin-bottom:1rem;line-height:1.5;}
+
 .result-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-bottom:0.6rem;}
 .univs-list{display:flex;flex-direction:column;gap:6px;}
 .univ-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#F9FAFB;border-radius:10px;border:0.5px solid var(--border);}
-.univ-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
-.univ-name{font-size:12px;font-weight:500;}
-.univ-city{font-size:11px;color:var(--gray);margin-left:auto;}
+.univ-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.univ-name{font-size:12px;font-weight:600;}
+.univ-city{font-size:11px;color:var(--gray);margin-left:auto;font-weight:500;}
 .result-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:0.8rem;}
-.rtag{font-size:10px;padding:3px 9px;border-radius:8px;background:#F3F4F6;color:var(--gray);font-weight:500;}
+.rtag{font-size:10px;padding:4px 10px;border-radius:8px;background:#F3F4F6;color:var(--dark);font-weight:600;}
 
-.loading-card{background:var(--white);border-radius:20px;padding:3rem 2rem;border:0.5px solid var(--border);text-align:center;}
-.loading-spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-text{font-size:14px;color:var(--gray);}
-
-.btn-restart{width:100%;background:var(--white);color:var(--blue);border:1.5px solid var(--blue);padding:12px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;margin-top:0.5rem;transition:all 0.2s;}
+.btn-restart{width:100%;background:var(--white);color:var(--blue);border:1.5px solid var(--blue);padding:13px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;margin-top:0.5rem;transition:all 0.2s;}
 .btn-restart:hover{background:var(--blue-light);}
 
+.conseil-box{background:var(--orange-light);border:0.5px solid #FCD34D;border-radius:14px;padding:1rem 1.2rem;margin-bottom:1rem;display:flex;gap:10px;align-items:flex-start;}
+.conseil-box p{font-size:12px;color:#92400E;line-height:1.6;}
+.conseil-box strong{display:block;margin-bottom:2px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;}
+
 footer{text-align:center;padding:2rem 1rem;font-size:12px;color:var(--gray);}
-footer a{color:var(--blue);text-decoration:none;font-weight:600;}
+footer span{color:var(--blue);font-weight:600;}
 </style>
 </head>
 <body>
@@ -144,13 +148,18 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
     <div class="logo-icon">O</div>
     <div class="logo-name">Orienta<span>Guide</span></div>
   </div>
-  <div class="header-badge">🤖 Orienté par IA</div>
+  <div class="header-badge">✦ Usage bénévole interne</div>
 </header>
 
 <div class="hero">
   <div class="hero-tag">✦ Outil d'orientation étudiante</div>
   <h1>Trouve ta formation<br><span>idéale</span> en 2 minutes</h1>
-  <p>Réponds à quelques questions et notre IA t'oriente vers les formations et universités qui correspondent le mieux à ton profil.</p>
+  <p>Réponds à quelques questions et notre outil te propose les formations et universités qui correspondent le mieux à ton profil.</p>
+  <div class="hero-stats">
+    <div class="hstat">🎓 <strong>+50</strong> formations référencées</div>
+    <div class="hstat">🏛️ <strong>+80</strong> universités françaises</div>
+    <div class="hstat">⚡ <strong>100%</strong> local, sans IA externe</div>
+  </div>
 </div>
 
 <div class="progress-wrap">
@@ -168,11 +177,11 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
 
   <!-- STEP 1 : Prénom -->
   <div class="step-card active" id="step1">
-    <div class="step-eyebrow">Bienvenue 👋</div>
+    <div class="step-eyebrow">👋 Bienvenue</div>
     <div class="step-title">Comment tu t'appelles ?</div>
-    <div class="step-sub">Pour personnaliser tes recommandations.</div>
-    <label class="input-label">Ton prénom</label>
-    <input class="input-field" id="prenom" type="text" placeholder="Ex : Sophie" oninput="checkStep1()">
+    <div class="step-sub">Pour personnaliser les recommandations de l'étudiant(e).</div>
+    <label class="input-label" style="margin-top:0">Prénom de l'étudiant(e)</label>
+    <input class="input-field" id="prenom" type="text" placeholder="Ex : Sophie" oninput="checkStep1()" autocomplete="off">
     <div class="nav-btns">
       <button class="btn-next" id="btn-next1" onclick="goTo(2)" disabled>Continuer →</button>
     </div>
@@ -180,29 +189,29 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
 
   <!-- STEP 2 : Niveau actuel -->
   <div class="step-card" id="step2">
-    <div class="step-eyebrow">Ton profil</div>
-    <div class="step-title">Tu es actuellement en quelle année ?</div>
-    <div class="step-sub">Cela nous aide à te proposer les bonnes formations.</div>
+    <div class="step-eyebrow">📌 Situation actuelle</div>
+    <div class="step-title">Il/elle est en quelle année ?</div>
+    <div class="step-sub">Cela nous aide à proposer les bonnes formations.</div>
     <div class="options-grid">
       <button class="opt" onclick="selectOpt(this,'niveau','Terminale')">
         <span class="opt-icon">🎒</span>
         <div class="opt-title">Terminale</div>
-        <div class="opt-desc">Je cherche une formation post-bac</div>
+        <div class="opt-desc">Recherche une formation post-bac</div>
       </button>
       <button class="opt" onclick="selectOpt(this,'niveau','Bac+1 / Bac+2')">
         <span class="opt-icon">📚</span>
         <div class="opt-title">Bac+1 / Bac+2</div>
-        <div class="opt-desc">Je veux changer ou continuer</div>
+        <div class="opt-desc">Veut changer ou continuer</div>
       </button>
       <button class="opt" onclick="selectOpt(this,'niveau','Bac+3 Licence')">
         <span class="opt-icon">🎓</span>
         <div class="opt-title">Bac+3 / Licence</div>
-        <div class="opt-desc">Je cherche un Master</div>
+        <div class="opt-desc">Cherche un Master</div>
       </button>
-      <button class="opt" onclick="selectOpt(this,'niveau','Autre')">
+      <button class="opt" onclick="selectOpt(this,'niveau','Reconversion')">
         <span class="opt-icon">🔄</span>
         <div class="opt-title">Reconversion</div>
-        <div class="opt-desc">Je reprends mes études</div>
+        <div class="opt-desc">Reprise d'études</div>
       </button>
     </div>
     <div class="nav-btns">
@@ -213,21 +222,24 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
 
   <!-- STEP 3 : Type de bac -->
   <div class="step-card" id="step3">
-    <div class="step-eyebrow">Ton bac</div>
-    <div class="step-title">Tu as (ou tu prépares) quel bac ?</div>
-    <div class="step-sub">Le type de bac influence les formations accessibles.</div>
+    <div class="step-eyebrow">🎓 Baccalauréat</div>
+    <div class="step-title">Quel type de bac ?</div>
+    <div class="step-sub">Le bac influence les formations accessibles.</div>
     <div class="options-grid cols3">
       <button class="opt" onclick="selectOpt(this,'bac','Général')">
         <span class="opt-icon">📖</span>
         <div class="opt-title">Général</div>
+        <div class="opt-desc">Toutes filières</div>
       </button>
       <button class="opt" onclick="selectOpt(this,'bac','Technologique')">
         <span class="opt-icon">⚙️</span>
-        <div class="opt-title">Techno</div>
+        <div class="opt-title">Technologique</div>
+        <div class="opt-desc">STI2D, STMG…</div>
       </button>
       <button class="opt" onclick="selectOpt(this,'bac','Professionnel')">
         <span class="opt-icon">🔧</span>
-        <div class="opt-title">Pro</div>
+        <div class="opt-title">Professionnel</div>
+        <div class="opt-desc">Accès BTS / BUT</div>
       </button>
     </div>
     <div class="nav-btns">
@@ -238,41 +250,49 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
 
   <!-- STEP 4 : Secteurs -->
   <div class="step-card" id="step4">
-    <div class="step-eyebrow">Tes intérêts</div>
-    <div class="step-title">Quels secteurs t'intéressent ?</div>
-    <div class="step-sub">Tu peux en choisir plusieurs.</div>
+    <div class="step-eyebrow">💡 Centres d'intérêt</div>
+    <div class="step-title">Quels secteurs l'intéressent ?</div>
+    <div class="step-sub">Sélectionne un ou plusieurs domaines.</div>
     <div class="check-grid" id="secteurs-grid">
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Communication & médias')">
+      <button class="check-opt" onclick="toggleCheck(this,'Communication & médias')">
         <div class="check-box"></div>
         <span class="check-label">🎙️ Communication & médias</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Numérique & tech')">
+      <button class="check-opt" onclick="toggleCheck(this,'Numérique & tech')">
         <div class="check-box"></div>
         <span class="check-label">💻 Numérique & tech</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Sciences humaines & sociales')">
+      <button class="check-opt" onclick="toggleCheck(this,'Sciences humaines & sociales')">
         <div class="check-box"></div>
         <span class="check-label">🧠 Sciences humaines & sociales</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Commerce & gestion')">
+      <button class="check-opt" onclick="toggleCheck(this,'Commerce & gestion')">
         <div class="check-box"></div>
         <span class="check-label">📊 Commerce & gestion</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Santé & social')">
+      <button class="check-opt" onclick="toggleCheck(this,'Santé & social')">
         <div class="check-box"></div>
         <span class="check-label">🏥 Santé & social</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Arts & design')">
+      <button class="check-opt" onclick="toggleCheck(this,'Arts & design')">
         <div class="check-box"></div>
         <span class="check-label">🎨 Arts & design</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Droit & sciences politiques')">
+      <button class="check-opt" onclick="toggleCheck(this,'Droit & sciences politiques')">
         <div class="check-box"></div>
         <span class="check-label">⚖️ Droit & sciences politiques</span>
       </button>
-      <button class="check-opt" onclick="toggleCheck(this,'secteur','Sciences & ingénierie')">
+      <button class="check-opt" onclick="toggleCheck(this,'Sciences & ingénierie')">
         <div class="check-box"></div>
         <span class="check-label">🔬 Sciences & ingénierie</span>
+      </button>
+      <button class="check-opt" onclick="toggleCheck(this,'Éducation & formation')">
+        <div class="check-box"></div>
+        <span class="check-label">📝 Éducation & formation</span>
+      </button>
+      <button class="check-opt" onclick="toggleCheck(this,'Environnement & développement durable')">
+        <div class="check-box"></div>
+        <span class="check-label">🌱 Environnement & développement durable</span>
       </button>
     </div>
     <div class="nav-btns">
@@ -283,11 +303,11 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
 
   <!-- STEP 5 : Infos complémentaires -->
   <div class="step-card" id="step5">
-    <div class="step-eyebrow">Dernière étape ✨</div>
+    <div class="step-eyebrow">✨ Dernière étape</div>
     <div class="step-title">Quelques détails pour affiner</div>
-    <div class="step-sub">Plus on en sait, mieux on t'oriente.</div>
+    <div class="step-sub">Plus on en sait, mieux on peut orienter.</div>
 
-    <label class="input-label" style="margin-top:0.5rem;">Tu vises quel niveau de formation ?</label>
+    <label class="input-label" style="margin-top:0">Niveau de formation visé</label>
     <div class="options-grid" style="margin-bottom:1rem;">
       <button class="opt" onclick="selectOpt(this,'niveau_vise','Licence / BUT (Bac+3)')">
         <span class="opt-icon">🎓</span>
@@ -307,19 +327,34 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
       <button class="opt" onclick="selectOpt(this,'niveau_vise','Pas encore décidé')">
         <span class="opt-icon">🤷</span>
         <div class="opt-title">Pas décidé</div>
-        <div class="opt-desc">L'IA m'aide à choisir</div>
+        <div class="opt-desc">L'outil m'aide à choisir</div>
       </button>
     </div>
 
-    <label class="input-label">Un mot sur toi ou ce que tu cherches vraiment <span style="color:var(--gray);font-weight:400;">(optionnel)</span></label>
-    <textarea class="input-field" id="extra" rows="3" placeholder="Ex : j'aime créer des contenus, je veux travailler dans la formation, j'hésite entre deux voies..." style="resize:none;"></textarea>
+    <label class="input-label">Alternance souhaitée ?</label>
+    <div class="options-grid cols3" style="margin-bottom:1rem;">
+      <button class="opt" onclick="selectOpt(this,'alternance','Oui')">
+        <span class="opt-icon">🤝</span>
+        <div class="opt-title">Oui</div>
+      </button>
+      <button class="opt" onclick="selectOpt(this,'alternance','Non')">
+        <span class="opt-icon">📘</span>
+        <div class="opt-title">Non</div>
+      </button>
+      <button class="opt" onclick="selectOpt(this,'alternance','Indifférent')">
+        <span class="opt-icon">🔀</span>
+        <div class="opt-title">Indifférent</div>
+      </button>
+    </div>
+
+    <label class="input-label">Précisions supplémentaires <span style="color:var(--gray);font-weight:400;">(optionnel)</span></label>
+    <textarea class="input-field" id="extra" rows="3" placeholder="Ex : aime créer du contenu, hésite entre deux voies, souhaite travailler à l'international…" style="resize:none;"></textarea>
 
     <div class="nav-btns">
       <button class="btn-prev" onclick="goTo(4)">← Retour</button>
-      <button class="btn-next" id="btn-next5" onclick="submitForm()" disabled>Obtenir mes recommandations 🎯</button>
+      <button class="btn-next" id="btn-next5" onclick="submitForm()" disabled>Voir les recommandations 🎯</button>
     </div>
   </div>
-
 </div>
 
 <!-- RESULTS -->
@@ -329,198 +364,606 @@ footer a{color:var(--blue);text-decoration:none;font-weight:600;}
 </div>
 
 <footer>
-  Outil conçu par <a href="#">Yanis Belbachir</a> · Projet associatif d'orientation étudiante · Propulsé par IA
+  Outil conçu par <span>l'association d'orientation étudiante</span> · Usage interne bénévole
 </footer>
 
 <script>
+/* =============================================
+   BASE DE DONNÉES DES FORMATIONS
+   ============================================= */
+const DB = [
+  /* ---- COMMUNICATION & MÉDIAS ---- */
+  {
+    nom:"Licence Information & Communication",
+    type:"Licence",
+    secteurs:["Communication & médias","Arts & design"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Formation généraliste aux sciences de l'information, des médias et de la communication. Elle couvre les relations publiques, le journalisme, la communication d'entreprise et le webdesign.",
+    pourquoi:"Idéale si tu aimes écrire, créer du contenu ou travailler sur l'image d'une organisation.",
+    universites:[
+      {nom:"Université Paris 2 Panthéon-Assas",ville:"Paris"},
+      {nom:"Université Paul Valéry",ville:"Montpellier"},
+      {nom:"Université Bordeaux Montaigne",ville:"Bordeaux"},
+      {nom:"Université de Strasbourg",ville:"Strasbourg"}
+    ],
+    tags:["Relations publiques","Journalisme","Réseaux sociaux","Culture générale"],
+    conseil:"Encourager l'étudiant à préparer un portfolio créatif (articles, photos, vidéos) dès maintenant, même amateur."
+  },
+  {
+    nom:"Bachelor Communication & Marketing Digital",
+    type:"Bachelor",
+    secteurs:["Communication & médias","Commerce & gestion"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique","Professionnel"],
+    description:"Formation professionnalisante couvrant le marketing digital, les réseaux sociaux, la création de contenu et la gestion de campagnes publicitaires en ligne.",
+    pourquoi:"Parfait pour allier créativité et sens des affaires dans un secteur en forte croissance.",
+    universites:[
+      {nom:"ISCOM",ville:"Paris / Lyon / Toulouse"},
+      {nom:"EFAP",ville:"Paris / Lyon"},
+      {nom:"SUP'COM",ville:"Paris"},
+      {nom:"ISCPA",ville:"Paris / Lyon / Toulouse"}
+    ],
+    tags:["SEO/SEA","Content marketing","Community manager","Alternance possible"],
+    conseil:"Signaler à l'étudiant que ces écoles sont souvent privées — vérifier les coûts et les bourses disponibles."
+  },
+  {
+    nom:"Master Communication des organisations",
+    type:"Master",
+    secteurs:["Communication & médias","Commerce & gestion"],
+    niveaux:["Bac+3 Licence","Reconversion"],
+    niveaux_vises:["Master (Bac+5)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Forme des responsables communication capables de piloter la stratégie de communication interne et externe d'une entreprise ou d'une institution publique.",
+    pourquoi:"Idéal pour viser un poste de directeur communication, attaché de presse ou consultant après une licence.",
+    universites:[
+      {nom:"Université Paris-Sorbonne",ville:"Paris"},
+      {nom:"Sciences Po Toulouse",ville:"Toulouse"},
+      {nom:"Université Lyon 2",ville:"Lyon"},
+      {nom:"Université de Rennes 2",ville:"Rennes"}
+    ],
+    tags:["Stratégie","Management","RP","Bac+5"],
+    conseil:"Demander à l'étudiant s'il a déjà fait des stages ou des associations en communication — cela pèse lourd dans les dossiers de master."
+  },
+
+  /* ---- NUMÉRIQUE & TECH ---- */
+  {
+    nom:"BUT Informatique",
+    type:"BUT",
+    secteurs:["Numérique & tech"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","BTS / DUT (Bac+2)","Pas encore décidé"],
+    bacs:["Général","Technologique","Professionnel"],
+    description:"Formation en 3 ans en IUT couvrant le développement logiciel, les réseaux, la cybersécurité et la gestion de données. Très professionnalisante avec des projets réels.",
+    pourquoi:"Excellent rapport formation/emploi, accessible à partir d'un bac technologique ou général avec goût pour les maths.",
+    universites:[
+      {nom:"IUT Paris Rives de Seine",ville:"Paris"},
+      {nom:"IUT de Lyon 1",ville:"Lyon"},
+      {nom:"IUT de Bordeaux",ville:"Bordeaux"},
+      {nom:"IUT de Nantes",ville:"Nantes"}
+    ],
+    tags:["Dev","Réseaux","IA","Alternance","IUT"],
+    conseil:"Le BUT Informatique est très bien coté par les employeurs. Préciser à l'étudiant qu'il peut poursuivre en Licence Pro ou Master ensuite."
+  },
+  {
+    nom:"Licence Informatique",
+    type:"Licence",
+    secteurs:["Numérique & tech","Sciences & ingénierie"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général"],
+    description:"Formation académique couvrant les bases théoriques de l'informatique : algorithmique, programmation, bases de données, intelligence artificielle. Ouvre vers le Master.",
+    pourquoi:"Idéale pour ceux qui veulent comprendre le fond de l'informatique et viser un master spécialisé (IA, cybersécurité, génie logiciel).",
+    universites:[
+      {nom:"Université Paris-Saclay",ville:"Orsay"},
+      {nom:"Université de Montpellier",ville:"Montpellier"},
+      {nom:"Université de Lille",ville:"Lille"},
+      {nom:"Université Grenoble-Alpes",ville:"Grenoble"}
+    ],
+    tags:["Algorithmique","Python","Java","Recherche","Master"],
+    conseil:"Recommander à l'étudiant de pratiquer la programmation en dehors des cours (GitHub, projets perso) pour enrichir son dossier."
+  },
+  {
+    nom:"Master Informatique — spécialité IA",
+    type:"Master",
+    secteurs:["Numérique & tech","Sciences & ingénierie"],
+    niveaux:["Bac+3 Licence"],
+    niveaux_vises:["Master (Bac+5)"],
+    bacs:["Général"],
+    description:"Master spécialisé en intelligence artificielle, machine learning et science des données. Débouche sur des postes en data science, recherche ou ingénierie IA.",
+    pourquoi:"Formation très recherchée dans un secteur en plein essor — salaires d'entrée parmi les plus élevés du marché.",
+    universites:[
+      {nom:"Université Paris-Saclay",ville:"Orsay"},
+      {nom:"Sorbonne Université",ville:"Paris"},
+      {nom:"Université de Lyon 1",ville:"Lyon"},
+      {nom:"INSA Lyon",ville:"Lyon"}
+    ],
+    tags:["Machine Learning","Data Science","Python","Recherche","Bac+5"],
+    conseil:"Vérifier que l'étudiant a un bon niveau en maths (algèbre linéaire, probabilités) — c'est indispensable pour les admissions en Master IA."
+  },
+  {
+    nom:"BTS SIO — Services Informatiques aux Organisations",
+    type:"BTS",
+    secteurs:["Numérique & tech"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["BTS / DUT (Bac+2)","Pas encore décidé"],
+    bacs:["Général","Technologique","Professionnel"],
+    description:"Formation de 2 ans très opérationnelle sur les réseaux, la sécurité informatique et le développement d'applications. Souvent disponible en alternance.",
+    pourquoi:"Formation rapide, très demandée par les PME et ESN, avec une insertion professionnelle quasi-immédiate.",
+    universites:[
+      {nom:"Lycée Voltaire",ville:"Paris"},
+      {nom:"Lycée René Cassin",ville:"Bayonne"},
+      {nom:"Lycée Jean Moulin",ville:"Roubaix"},
+      {nom:"Lycée Jules Ferry",ville:"Cannes"}
+    ],
+    tags:["Réseaux","Sécurité","Dev web","Alternance","Insertion rapide"],
+    conseil:"Si l'étudiant hésite entre BTS et BUT, préciser que le BTS est plus court (2 ans) mais le BUT (3 ans) ouvre plus de portes pour la poursuite d'études."
+  },
+
+  /* ---- SCIENCES HUMAINES ---- */
+  {
+    nom:"Licence Psychologie",
+    type:"Licence",
+    secteurs:["Sciences humaines & sociales","Santé & social","Éducation & formation"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Formation couvrant la psychologie clinique, sociale, cognitive et du développement. Ouvre sur des masters très divers : psychologue, RH, éducation, recherche.",
+    pourquoi:"Pour ceux qui s'intéressent au comportement humain et veulent exercer un métier d'accompagnement ou de soin.",
+    universites:[
+      {nom:"Université Paris Cité",ville:"Paris"},
+      {nom:"Université Lumière Lyon 2",ville:"Lyon"},
+      {nom:"Université de Bordeaux",ville:"Bordeaux"},
+      {nom:"Université de Rouen Normandie",ville:"Rouen"}
+    ],
+    tags:["Clinique","Social","RH","Accompagnement","Master requis"],
+    conseil:"Rappeler à l'étudiant que le titre de psychologue nécessite un Master 2 validé — la licence seule ne suffit pas pour exercer."
+  },
+  {
+    nom:"Licence Sociologie",
+    type:"Licence",
+    secteurs:["Sciences humaines & sociales","Éducation & formation"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général"],
+    description:"Étude des phénomènes sociaux, des inégalités, des organisations et des politiques publiques. Débouche en travail social, RH, recherche ou médiation.",
+    pourquoi:"Idéale pour comprendre les dynamiques sociales et orienter vers des métiers de l'humain, du conseil ou de la recherche.",
+    universites:[
+      {nom:"Université Paris 8",ville:"Saint-Denis"},
+      {nom:"Université Toulouse Jean Jaurès",ville:"Toulouse"},
+      {nom:"Université de Nantes",ville:"Nantes"},
+      {nom:"Université de Strasbourg",ville:"Strasbourg"}
+    ],
+    tags:["Sciences sociales","RH","Recherche","Travail social"],
+    conseil:"Conseiller à l'étudiant de combiner avec une mineure en statistiques ou en droit pour diversifier ses débouchés."
+  },
+
+  /* ---- COMMERCE & GESTION ---- */
+  {
+    nom:"BTS Management Commercial Opérationnel",
+    type:"BTS",
+    secteurs:["Commerce & gestion"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["BTS / DUT (Bac+2)","Pas encore décidé"],
+    bacs:["Général","Technologique","Professionnel"],
+    description:"Formation courte et très professionnalisante centrée sur la gestion d'équipe commerciale, la vente et la relation client. Très souvent en alternance.",
+    pourquoi:"Formation pratique avec une insertion rapide dans le commerce, la distribution ou le management de proximité.",
+    universites:[
+      {nom:"Lycée Louis Armand",ville:"Paris"},
+      {nom:"Lycée Elisa Lemonnier",ville:"Paris"},
+      {nom:"CCI Formation",ville:"Lyon"},
+      {nom:"Lycée Arago",ville:"Perpignan"}
+    ],
+    tags:["Vente","Management","Alternance","Insertion rapide","Commerce"],
+    conseil:"L'alternance est fortement conseillée en MCO — aider l'étudiant à chercher une entreprise partenaire dès maintenant."
+  },
+  {
+    nom:"Licence Administration Économique et Sociale (AES)",
+    type:"Licence",
+    secteurs:["Commerce & gestion","Droit & sciences politiques","Sciences humaines & sociales"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Formation pluridisciplinaire alliant droit, économie, gestion et sciences sociales. Idéale pour ceux qui n'ont pas encore de spécialité précise mais aiment les matières mixtes.",
+    pourquoi:"Parfaite pour un étudiant indécis qui veut garder des portes ouvertes vers le master droit, gestion ou RH.",
+    universites:[
+      {nom:"Université Paris 1 Panthéon-Sorbonne",ville:"Paris"},
+      {nom:"Université de Nantes",ville:"Nantes"},
+      {nom:"Université Grenoble-Alpes",ville:"Grenoble"},
+      {nom:"Université de Rennes 1",ville:"Rennes"}
+    ],
+    tags:["Pluridisciplinaire","RH","Droit","Économie","Polyvalent"],
+    conseil:"AES est souvent sous-estimée mais très polyvalente — idéale pour un étudiant indécis entre droit, éco et gestion."
+  },
+  {
+    nom:"Master Management des Ressources Humaines",
+    type:"Master",
+    secteurs:["Commerce & gestion","Sciences humaines & sociales"],
+    niveaux:["Bac+3 Licence","Reconversion"],
+    niveaux_vises:["Master (Bac+5)"],
+    bacs:["Général","Technologique"],
+    description:"Formation spécialisée dans le recrutement, la gestion des talents, le droit social et la stratégie RH. Débouche sur des postes de RRH, DRH ou consultant.",
+    pourquoi:"Pour ceux qui aiment gérer les personnes autant que les processus organisationnels.",
+    universites:[
+      {nom:"Université Paris-Dauphine",ville:"Paris"},
+      {nom:"IAE Lyon",ville:"Lyon"},
+      {nom:"Université de Bordeaux",ville:"Bordeaux"},
+      {nom:"IAE Toulouse",ville:"Toulouse"}
+    ],
+    tags:["RH","Recrutement","Droit social","Management","Bac+5"],
+    conseil:"Vérifier si l'étudiant a déjà une licence dans un domaine connexe — certains masters RH acceptent des profils variés (psycho, droit, gestion)."
+  },
+
+  /* ---- SANTÉ & SOCIAL ---- */
+  {
+    nom:"Licence Sciences Sanitaires et Sociales",
+    type:"Licence",
+    secteurs:["Santé & social","Sciences humaines & sociales"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique","Professionnel"],
+    description:"Formation pluridisciplinaire couvrant la santé publique, le travail social et les politiques de protection sociale. Ouvre sur des métiers d'accompagnement et de coordination.",
+    pourquoi:"Idéale pour ceux qui veulent travailler dans le médico-social, les collectivités ou les associations.",
+    universites:[
+      {nom:"Université Paris 13 Sorbonne Paris Nord",ville:"Bobigny"},
+      {nom:"Université d'Aix-Marseille",ville:"Marseille"},
+      {nom:"Université de Montpellier",ville:"Montpellier"},
+      {nom:"Université de Poitiers",ville:"Poitiers"}
+    ],
+    tags:["Social","Santé publique","Médico-social","Associations"],
+    conseil:"Signaler à l'étudiant qu'il existe aussi des formations IFSI (infirmier) ou AS (aide-soignant) si son objectif est un métier de soin direct."
+  },
+
+  /* ---- ARTS & DESIGN ---- */
+  {
+    nom:"Licence Arts Plastiques",
+    type:"Licence",
+    secteurs:["Arts & design","Communication & médias"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Formation couvrant les pratiques artistiques (peinture, sculpture, photographie, art numérique) et la théorie de l'art. Ouvre sur l'enseignement, la médiation culturelle ou les arts appliqués.",
+    pourquoi:"Pour les esprits créatifs qui souhaitent approfondir leur pratique artistique dans un cadre universitaire.",
+    universites:[
+      {nom:"Université Paris 1 Panthéon-Sorbonne",ville:"Paris"},
+      {nom:"Université de Strasbourg",ville:"Strasbourg"},
+      {nom:"Université Rennes 2",ville:"Rennes"},
+      {nom:"Université d'Aix-Marseille",ville:"Marseille"}
+    ],
+    tags:["Créativité","Art numérique","Enseignement","Médiation culturelle"],
+    conseil:"Conseiller à l'étudiant de préparer un portfolio de ses travaux artistiques — indispensable pour les concours d'écoles d'art après la licence."
+  },
+
+  /* ---- DROIT ---- */
+  {
+    nom:"Licence Droit",
+    type:"Licence",
+    secteurs:["Droit & sciences politiques"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Master (Bac+5)","Pas encore décidé"],
+    bacs:["Général"],
+    description:"Formation rigoureuse en droit civil, pénal, administratif et des affaires. Ouvre sur des masters très variés : avocat, magistrat, notaire, juriste d'entreprise.",
+    pourquoi:"Filière exigeante mais qui ouvre de nombreuses portes vers des métiers du droit, de la politique ou de l'entreprise.",
+    universites:[
+      {nom:"Université Paris 2 Panthéon-Assas",ville:"Paris"},
+      {nom:"Université de Lyon 3",ville:"Lyon"},
+      {nom:"Université de Toulouse Capitole",ville:"Toulouse"},
+      {nom:"Université de Bordeaux",ville:"Bordeaux"}
+    ],
+    tags:["Droit civil","Droit pénal","Concours","Exigent","Avocat / Notaire"],
+    conseil:"Mentionner à l'étudiant que le passage par un master puis l'école du barreau (ou concours notariat) est obligatoire pour exercer comme avocat ou notaire."
+  },
+  {
+    nom:"Licence Sciences Politiques",
+    type:"Licence",
+    secteurs:["Droit & sciences politiques","Sciences humaines & sociales"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Master (Bac+5)","Pas encore décidé"],
+    bacs:["Général"],
+    description:"Formation pluridisciplinaire en science politique, relations internationales, sociologie politique et institutions publiques. Prépare à Sciences Po ou aux concours administratifs.",
+    pourquoi:"Pour ceux qui aiment comprendre les institutions, la politique et veulent travailler dans le secteur public ou les ONG.",
+    universites:[
+      {nom:"Sciences Po Paris",ville:"Paris"},
+      {nom:"Sciences Po Lyon",ville:"Lyon"},
+      {nom:"Sciences Po Grenoble",ville:"Grenoble"},
+      {nom:"Université Paris 1 Panthéon-Sorbonne",ville:"Paris"}
+    ],
+    tags:["Relations internationales","Concours admin","ONG","Diplomatie"],
+    conseil:"Sciences Po a un concours d'entrée spécifique — informer l'étudiant sur les prépas et les critères d'admission sur Parcoursup."
+  },
+
+  /* ---- SCIENCES & INGÉNIERIE ---- */
+  {
+    nom:"Licence Sciences de la Vie (SVT)",
+    type:"Licence",
+    secteurs:["Sciences & ingénierie","Santé & social"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Master (Bac+5)","Pas encore décidé"],
+    bacs:["Général"],
+    description:"Formation scientifique couvrant la biologie, la génétique, la physiologie et l'écologie. Ouvre sur les masters santé, environnement, recherche ou enseignement (CAPES).",
+    pourquoi:"Pour les profils scientifiques attirés par le vivant, qui envisagent une poursuite en médecine, recherche ou écologie.",
+    universites:[
+      {nom:"Sorbonne Université",ville:"Paris"},
+      {nom:"Université Paul Sabatier",ville:"Toulouse"},
+      {nom:"Université de Montpellier",ville:"Montpellier"},
+      {nom:"Université de Strasbourg",ville:"Strasbourg"}
+    ],
+    tags:["Biologie","Génétique","Recherche","Santé","Enseignement"],
+    conseil:"Rappeler que la PASS (Parcours Accès Spécifique Santé) est une voie alternative si l'étudiant vise la médecine — bien distincte de la licence SVT."
+  },
+  {
+    nom:"BUT Génie Civil — Construction Durable",
+    type:"BUT",
+    secteurs:["Sciences & ingénierie","Environnement & développement durable"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Formation de 3 ans couvrant la conception, la construction et la réhabilitation de bâtiments et d'infrastructures durables. Très professionnalisante avec stages obligatoires.",
+    pourquoi:"Secteur en forte demande avec les enjeux de rénovation énergétique et de construction durable.",
+    universites:[
+      {nom:"IUT de Nantes",ville:"Nantes"},
+      {nom:"IUT de Lyon 1",ville:"Lyon"},
+      {nom:"IUT de Bordeaux",ville:"Bordeaux"},
+      {nom:"IUT de Paris Rives de Seine",ville:"Paris"}
+    ],
+    tags:["BTP","Construction","Développement durable","IUT","Alternance"],
+    conseil:"Bon choix pour un profil technique qui ne souhaite pas aller en école d'ingénieur — possibilité de poursuite en Licence Pro ou École d'ingé."
+  },
+
+  /* ---- ÉDUCATION ---- */
+  {
+    nom:"Licence Sciences de l'Éducation",
+    type:"Licence",
+    secteurs:["Éducation & formation","Sciences humaines & sociales"],
+    niveaux:["Terminale","Bac+1 / Bac+2","Reconversion"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Master (Bac+5)","Pas encore décidé"],
+    bacs:["Général","Technologique"],
+    description:"Formation pluridisciplinaire sur les processus d'apprentissage, les institutions éducatives et la formation professionnelle. Ouvre sur l'enseignement, le travail social ou la formation en entreprise.",
+    pourquoi:"Pour ceux qui souhaitent enseigner, former ou accompagner des publics variés dans des contextes scolaires ou professionnels.",
+    universites:[
+      {nom:"Université Paris 8",ville:"Saint-Denis"},
+      {nom:"Université Toulouse Jean Jaurès",ville:"Toulouse"},
+      {nom:"Université de Rouen",ville:"Rouen"},
+      {nom:"Université de Caen",ville:"Caen"}
+    ],
+    tags:["Enseignement","Formation","Accompagnement","Travail social"],
+    conseil:"Mentionner que le Master MEEF (Métiers de l'Enseignement) est la voie obligatoire pour devenir professeur des écoles ou du secondaire."
+  },
+
+  /* ---- ENVIRONNEMENT ---- */
+  {
+    nom:"Licence Géographie & Aménagement",
+    type:"Licence",
+    secteurs:["Environnement & développement durable","Sciences humaines & sociales"],
+    niveaux:["Terminale","Bac+1 / Bac+2"],
+    niveaux_vises:["Licence / BUT (Bac+3)","Master (Bac+5)","Pas encore décidé"],
+    bacs:["Général"],
+    description:"Formation couvrant la géographie physique et humaine, l'aménagement du territoire, l'urbanisme et les enjeux environnementaux. Débouche sur des masters en urbanisme, environnement ou cartographie.",
+    pourquoi:"Pour les profils attirés par les enjeux territoriaux, le développement durable et la planification urbaine.",
+    universites:[
+      {nom:"Université Paris 1 Panthéon-Sorbonne",ville:"Paris"},
+      {nom:"Université de Toulouse 2",ville:"Toulouse"},
+      {nom:"Université de Grenoble-Alpes",ville:"Grenoble"},
+      {nom:"Université de Rennes 2",ville:"Rennes"}
+    ],
+    tags:["Urbanisme","Environnement","SIG","Cartographie","Aménagement"],
+    conseil:"Un bon choix pour un étudiant sensible aux enjeux climatiques qui hésite entre Sciences Po et une licence scientifique."
+  }
+];
+
+/* =============================================
+   ÉTAT DE L'APPLICATION
+   ============================================= */
 const data = {
-  prenom: '',
-  niveau: '',
-  bac: '',
-  secteurs: [],
-  niveau_vise: '',
-  extra: ''
+  prenom:'', niveau:'', bac:'', secteurs:[],
+  niveau_vise:'', alternance:'', extra:''
 };
 
-function checkStep1() {
-  const val = document.getElementById('prenom').value.trim();
-  data.prenom = val;
-  document.getElementById('btn-next1').disabled = val.length < 2;
+/* =============================================
+   NAVIGATION & FORMULAIRE
+   ============================================= */
+function checkStep1(){
+  const v = document.getElementById('prenom').value.trim();
+  data.prenom = v;
+  document.getElementById('btn-next1').disabled = v.length < 2;
 }
 
-function selectOpt(btn, key, val) {
-  const parent = btn.closest('.options-grid, .step-card');
-  parent.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+function selectOpt(btn, key, val){
+  const grid = btn.closest('.options-grid');
+  grid.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
   btn.classList.add('selected');
   data[key] = val;
-  const step = btn.closest('.step-card');
-  if (step) {
-    const stepId = step.id;
-    const num = stepId.replace('step','');
-    const nextBtn = document.getElementById('btn-next'+num);
-    if(nextBtn) nextBtn.disabled = false;
+  const card = btn.closest('.step-card');
+  if(card){
+    const n = card.id.replace('step','');
+    const nb = document.getElementById('btn-next'+n);
+    if(nb) nb.disabled = false;
   }
+  // Step 5 : vérifier les deux champs requis
+  if(key==='nivel_vise'||key==='alternance'||key==='niveau_vise') checkStep5();
 }
 
-function toggleCheck(btn, key, val) {
+function toggleCheck(btn, val){
   btn.classList.toggle('selected');
-  btn.querySelector('.check-box').textContent = btn.classList.contains('selected') ? '✓' : '';
-  if(btn.classList.contains('selected')) {
+  const cb = btn.querySelector('.check-box');
+  if(btn.classList.contains('selected')){
+    cb.textContent = '✓';
     if(!data.secteurs.includes(val)) data.secteurs.push(val);
   } else {
-    data.secteurs = data.secteurs.filter(s => s !== val);
+    cb.textContent = '';
+    data.secteurs = data.secteurs.filter(s=>s!==val);
   }
   document.getElementById('btn-next4').disabled = data.secteurs.length === 0;
 }
 
-function goTo(step) {
-  document.querySelectorAll('.step-card').forEach(s => s.classList.remove('active'));
+function checkStep5(){
+  document.getElementById('btn-next5').disabled = !data.niveau_vise;
+}
+
+function goTo(step){
+  document.querySelectorAll('.step-card').forEach(s=>s.classList.remove('active'));
   document.getElementById('step'+step).classList.add('active');
-  updateProgress(step);
+  for(let i=1;i<=5;i++){
+    const el = document.getElementById('ps'+i);
+    el.className = 'pstep';
+    if(i<step) el.classList.add('done');
+    else if(i===step) el.classList.add('active');
+  }
+  document.getElementById('progress-label').textContent = `Étape ${step} sur 5`;
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function updateProgress(step) {
-  for(let i=1;i<=5;i++) {
-    const el = document.getElementById('ps'+i);
-    el.className = 'pstep';
-    if(i < step) el.classList.add('done');
-    else if(i === step) el.classList.add('active');
-  }
-  document.getElementById('progress-label').textContent = `Étape ${step} sur 5`;
+/* =============================================
+   MOTEUR DE RECOMMANDATION (sans API)
+   ============================================= */
+function score(formation, d){
+  let s = 0;
+  // Secteurs : +40 pts par secteur correspondant
+  d.secteurs.forEach(sec => {
+    if(formation.secteurs.includes(sec)) s += 40;
+  });
+  // Niveau actuel
+  if(formation.niveaux.includes(d.niveau)) s += 20;
+  // Niveau visé
+  if(formation.niveaux_vises.includes(d.niveau_vise)) s += 25;
+  // Bac
+  if(formation.bacs.includes(d.bac)) s += 15;
+  return s;
 }
 
-async function submitForm() {
+function recommander(d){
+  return DB
+    .map(f => ({...f, _score: score(f, d)}))
+    .filter(f => f._score > 0)
+    .sort((a,b) => b._score - a._score)
+    .slice(0, 4);
+}
+
+function conseils(d){
+  const phrases = [];
+  if(d.niveau === 'Bac+3 Licence') phrases.push('En fin de licence, c\'est le bon moment pour identifier les masters qui correspondent au projet professionnel.');
+  if(d.niveau === 'Terminale') phrases.push('Orienter l\'étudiant(e) vers Parcoursup et l\'encourager à faire des vœux diversifiés.');
+  if(d.niveau === 'Bac+1 / Bac+2') phrases.push('Une réorientation en L1/L2 est tout à fait possible — vérifier les passerelles disponibles dans l\'université actuelle.');
+  if(d.alternance === 'Oui') phrases.push('L\'étudiant(e) souhaite une alternance — privilégier les formations avec partenariats entreprises (IUT, BTS, licences pro).');
+  if(d.secteurs.length > 3) phrases.push('Beaucoup de centres d\'intérêt — aider l\'étudiant(e) à identifier son cœur de métier pour affiner le choix.');
+  if(phrases.length === 0) phrases.push('Bien écouter les motivations profondes de l\'étudiant(e) avant de présenter les formations.');
+  return phrases.join(' ');
+}
+
+function messagePerso(d, formations){
+  const prenom = d.prenom || 'l\'étudiant(e)';
+  if(formations.length === 0) return `Nous n'avons pas trouvé de formations correspondant exactement à ce profil — élargir les secteurs d'intérêt peut aider.`;
+  const f0 = formations[0];
+  return `Sur la base du profil de ${prenom}, ${formations.length} formations ont été identifiées. La plus adaptée est ${f0.nom}. Ces recommandations sont un point de départ — la discussion avec le bénévole reste essentielle pour valider le projet.`;
+}
+
+/* =============================================
+   SOUMISSION & AFFICHAGE
+   ============================================= */
+function submitForm(){
   data.extra = document.getElementById('extra').value.trim();
-  document.querySelector('.form-wrap').style.display = 'none';
-  document.querySelector('.progress-wrap').style.display = 'none';
-  document.querySelector('.hero').style.display = 'none';
+  document.querySelector('.form-wrap').style.display='none';
+  document.querySelector('.progress-wrap').style.display='none';
+  document.querySelector('.hero').style.display='none';
 
   const rw = document.getElementById('results-wrap');
   rw.style.display = 'block';
+
+  // Courte animation de chargement (300ms) pour l'effet
   document.getElementById('results-content').innerHTML = `
-    <div class="loading-card">
-      <div class="loading-spinner"></div>
-      <div class="loading-text">Notre IA analyse ton profil, <strong>${data.prenom}</strong>...<br>Quelques secondes ✨</div>
+    <div style="background:var(--white);border-radius:20px;padding:3rem 2rem;text-align:center;border:0.5px solid var(--border);">
+      <div style="width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;"></div>
+      <div style="font-size:14px;color:var(--gray);">Analyse du profil de <strong>${data.prenom}</strong> en cours…</div>
     </div>`;
-
-  const prompt = `Tu es un conseiller d'orientation expert pour étudiants français. 
-Voici le profil de l'étudiant :
-- Prénom : ${data.prenom}
-- Niveau actuel : ${data.niveau}
-- Type de bac : ${data.bac}
-- Secteurs d'intérêt : ${data.secteurs.join(', ')}
-- Niveau de formation visé : ${data.niveau_vise}
-- Informations supplémentaires : ${data.extra || 'Aucune'}
-
-Génère 4 recommandations de formations adaptées à ce profil. 
-Réponds UNIQUEMENT en JSON valide, sans markdown, sans backticks, ce format exact :
-{
-  "message": "Message personnalisé d'encouragement pour ${data.prenom} en 1-2 phrases",
-  "formations": [
-    {
-      "nom": "Nom exact de la formation",
-      "type": "Licence" ou "Master" ou "BUT" ou "BTS" ou "Bachelor",
-      "description": "Description en 2 phrases de ce que prépare cette formation et ses débouchés",
-      "pourquoi": "Pourquoi cette formation correspond à ce profil spécifique en 1 phrase",
-      "universites": [
-        {"nom": "Nom université", "ville": "Ville"},
-        {"nom": "Nom université 2", "ville": "Ville"},
-        {"nom": "Nom université 3", "ville": "Ville"}
-      ],
-      "tags": ["tag1", "tag2", "tag3"]
-    }
-  ]
-}`;
-
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-6",
-        max_tokens: 1500,
-        messages: [{role:"user", content: prompt}]
-      })
-    });
-    const res = await response.json();
-    const text = res.content[0].text.replace(/```json|```/g,'').trim();
-    const json = JSON.parse(text);
-    renderResults(json);
-  } catch(e) {
-    document.getElementById('results-content').innerHTML = `
-      <div class="loading-card">
-        <div style="font-size:40px;margin-bottom:1rem;">😔</div>
-        <div class="loading-text">Une erreur est survenue. Réessaie dans quelques instants.</div>
-      </div>`;
-  }
+  setTimeout(()=>{
+    const formations = recommander(data);
+    renderResults(formations);
+  }, 700);
 }
 
-function renderResults(data_res) {
+function typeClass(type){
+  const map = {Licence:'type-licence',Master:'type-master',BUT:'type-but',BTS:'type-bts',Bachelor:'type-bachelor'};
+  return map[type] || 'type-autre';
+}
+
+function renderResults(formations){
   const ranks = ['rank-1','rank-2','rank-3','rank-other'];
   const rankEmoji = ['🥇','🥈','🥉','✦'];
+
   let html = `
+    <div class="conseil-box">
+      <span style="font-size:20px;flex-shrink:0">💡</span>
+      <p><strong>Note pour le bénévole :</strong> ${conseils(data)}</p>
+    </div>
     <div class="results-header">
-      <div class="results-emoji">🎯</div>
-      <div class="results-title">Tes recommandations, ${data.prenom} !</div>
-      <div class="results-sub">${data_res.message}</div>
+      <div class="results-name">Profil de ${data.prenom}</div>
+      <div class="results-title">Formations recommandées 🎯</div>
+      <div class="results-sub">${messagePerso(data, formations)}</div>
+      <div class="results-pills">
+        ${data.secteurs.slice(0,3).map(s=>`<span class="results-pill">${s}</span>`).join('')}
+        ${data.niveau_vise ? `<span class="results-pill">${data.niveau_vise}</span>` : ''}
+      </div>
     </div>`;
 
-  data_res.formations.forEach((f, i) => {
-    const typeClass = 'type-'+f.type.toLowerCase().replace(/\s/g,'-').replace(/[^a-z-]/g,'');
-    const univsHtml = f.universites.map(u => `
-      <div class="univ-item">
-        <div class="univ-dot"></div>
-        <span class="univ-name">${u.nom}</span>
-        <span class="univ-city">${u.ville}</span>
-      </div>`).join('');
-    const tagsHtml = f.tags.map(t => `<span class="rtag">${t}</span>`).join('');
-    html += `
-      <div class="result-card">
-        <div class="result-card-header">
-          <div class="result-rank ${ranks[i] || 'rank-other'}">${rankEmoji[i] || '✦'}</div>
-          <div>
-            <div class="result-name">${f.nom}</div>
-            <span class="result-type ${typeClass}">${f.type}</span>
+  if(formations.length === 0){
+    html += `<div class="result-card" style="text-align:center;padding:2rem;">
+      <div style="font-size:40px;margin-bottom:1rem;">🔍</div>
+      <p style="color:var(--gray);font-size:14px;">Aucune formation ne correspond exactement à ce profil.<br>Essaie d'élargir les secteurs d'intérêt.</p>
+    </div>`;
+  } else {
+    formations.forEach((f, i)=>{
+      const univHtml = f.universites.map(u=>`
+        <div class="univ-item">
+          <div class="univ-dot"></div>
+          <span class="univ-name">${u.nom}</span>
+          <span class="univ-city">${u.ville}</span>
+        </div>`).join('');
+      const tagsHtml = (f.tags||[]).map(t=>`<span class="rtag">${t}</span>`).join('');
+      html += `
+        <div class="result-card">
+          <div class="result-card-header">
+            <div class="result-rank ${ranks[i]||'rank-other'}">${rankEmoji[i]||'✦'}</div>
+            <div>
+              <div class="result-name">${f.nom}</div>
+              <span class="result-type ${typeClass(f.type)}">${f.type}</span>
+            </div>
           </div>
-        </div>
-        <p class="result-desc">${f.description}</p>
-        <p style="font-size:12px;color:var(--blue);font-weight:600;margin-bottom:1rem;">💡 ${f.pourquoi}</p>
-        <div class="result-section-title">Universités qui proposent cette formation</div>
-        <div class="univs-list">${univsHtml}</div>
-        <div class="result-tags">${tagsHtml}</div>
-      </div>`;
-  });
+          <p class="result-desc">${f.description}</p>
+          <div class="result-why">💡 ${f.pourquoi}</div>
+          <div class="result-section-title">Universités proposant cette formation</div>
+          <div class="univs-list">${univHtml}</div>
+          <div class="result-tags">${tagsHtml}</div>
+        </div>`;
+    });
+  }
 
   document.getElementById('results-content').innerHTML = html;
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function restart() {
-  data.prenom=''; data.niveau=''; data.bac=''; data.secteurs=[]; data.niveau_vise=''; data.extra='';
-  document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
-  document.querySelectorAll('.check-opt').forEach(o => {
+function restart(){
+  data.prenom=''; data.niveau=''; data.bac=''; data.secteurs=[];
+  data.niveau_vise=''; data.alternance=''; data.extra='';
+  document.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('.check-opt').forEach(o=>{
     o.classList.remove('selected');
-    o.querySelector('.check-box').textContent = '';
+    o.querySelector('.check-box').textContent='';
   });
-  document.getElementById('prenom').value = '';
-  document.getElementById('extra').value = '';
-  document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
-  document.getElementById('results-wrap').style.display = 'none';
-  document.querySelector('.form-wrap').style.display = 'block';
-  document.querySelector('.progress-wrap').style.display = 'block';
-  document.querySelector('.hero').style.display = 'block';
+  document.getElementById('prenom').value='';
+  document.getElementById('extra').value='';
+  document.querySelectorAll('.btn-next').forEach(b=>b.disabled=true);
+  document.getElementById('results-wrap').style.display='none';
+  document.querySelector('.form-wrap').style.display='block';
+  document.querySelector('.progress-wrap').style.display='block';
+  document.querySelector('.hero').style.display='block';
   goTo(1);
 }
 
-// Step 5 validation
-document.addEventListener('change', () => {
-  if(data.niveau_vise) document.getElementById('btn-next5').disabled = false;
-});
-document.addEventListener('click', () => {
-  setTimeout(() => {
-    if(data.niveau_vise) document.getElementById('btn-next5').disabled = false;
-  }, 100);
+// Déblocage step 5 au clic
+document.addEventListener('click',()=>{
+  setTimeout(checkStep5, 50);
 });
 </script>
 </body>
